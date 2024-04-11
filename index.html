@@ -29,22 +29,23 @@
                 <br>
                 <input type="date" id="birthday" name="birthday" required>
                 <br>
+                <!-- Gender -->
                 <label for="gender">Gender :</label>
                 <br>
-                <input class="gender" type="radio" value="male" name="gender" id = "gender" required> <label>male</label>
-                <input class="gender" type="radio" value="female" name="gender" id = "gender"> <label>female</label>
+                <input class="gender" type="radio" value="male" name="gender" required> <label>male</label>
+                <input class="gender" type="radio" value="female" name="gender" > <label>female</label>
                 <br>           
                 <label for="profession">Choose Your Profession:</label>
                 <br>
-    
-                <select name="dropdown" id="profession">
-                <option value="option1">Web Developer</option>
-                <option value="option2">Data Analytics</option>
-                <option value="option3">UI/UX Design</option>
-                <option value="option4">Backend Developer</option>
+                <!-- Professions -->
+                <select name="profession" id="profession">
+                <option value="Web Developer">Web Developer</option>
+                <option value="Data Analytics">Data Analytics</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+                <option value="Backend Developer">Backend Developer</option>
                 </select>
                 <br>
-
+                <!-- About me  -->
                 <div>
                     <br>
                     <label for="aboutme"><strong> About me:</strong></label>
@@ -52,7 +53,11 @@
                     <textarea name="aboutme" id="aboutme" cols="30" rows="10">tell us about you</textarea>
                 </div>
                 <br>
-                <input type="submit" name="submitBtn" id="submitBtn" value="Submit" title="Click to submit the form" class="submit-button">
+                <!-- Submit  -->
+                <input type="submit" name="submitBtn" id="submitBtn" 
+                value="Register Now" 
+                title="Click to register now!" 
+                class="submit-button">
 
             </form>
         </section>     

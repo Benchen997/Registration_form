@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return; // Exit the function
         }
 
-
-
         //check password standard
         if (!passwordPattern.test(password)) {
             alert('Password must contain at least one number, one uppercase and lowercase letter, one special character, and at least 8 or more characters.');
@@ -50,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Once redirected to submission.html, retrieve the form data from localStorage and log it to the console
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve the formData from localStorage
     const formDataJSON = localStorage.getItem('formData');
