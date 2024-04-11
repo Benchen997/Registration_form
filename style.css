@@ -1,0 +1,102 @@
+h1 {
+    display: block;
+    color: #84C754;
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+body {
+    background-color: #171615;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Consolas', monospace;
+
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aliceblue; */
+    height: 60vh;
+    width: auto;
+}
+.submission{
+    font-size: large;
+    color:#84C754;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 60vh;
+    width: auto;   
+}
+
+.main form {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.main label {
+    text-align: right; /* Align labels to the right */
+    color: #84C754;
+}
+
+.main input,
+.main textarea,
+.main label {
+    margin-bottom: 20px; /* Adjust the value to increase the gap */
+}
+
+/* Additional styles to improve visual experience */
+.main form {
+    padding: 40px;
+    border-radius: 20px; 
+    width: fit-content; 
+    max-width: 90%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Since .main is flex, we don't want the form to stretch */
+.main form {
+    align-self: start; /* Aligns form to the start of the flex container */
+}
+
+.main input[type="text"],
+.main input[type="email"],
+.main input[type="password"],
+.main input[type="date"],
+.main select,
+.main option,
+.main textarea {
+    background-color: #AFA2A0;
+    width: 100%;
+    max-width: 300px; 
+    margin-bottom: 20px;
+}
+
+.submit-button {
+    background-color: #AFA2A0; /* Default background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Add some padding */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.submit-button:hover {
+    background-color: #84C754; /* Background color on hover */
+}
+
+
+.main textarea {
+    height: 150px; /* Adjust the height as needed */
+}
+
