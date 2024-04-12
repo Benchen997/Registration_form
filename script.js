@@ -1,3 +1,5 @@
+// To handle form submission, validate the form data, 
+// store the form data in localStorage, and redirect to submission.html
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('myForm');
 
@@ -62,6 +64,80 @@ document.addEventListener('DOMContentLoaded', function() {
     // Clear the stored form data to prevent it from being logged again on page reload
     localStorage.removeItem('formData');
 });
+
+// To handle animation effects on the form elements
+{
+    const progress = document.getElementById('progress')
+    const prev = document.getElementById('prev')
+    const next = document.getElementById('next')
+    const circles = document.querySelectorAll('.circle')
+    const cards = document.querySelectorAll('.card')
+
+    let cardIndex = 0;
+    cards[cardIndex].style.display = 'block';
+
+    let currentActive = 1
+
+    next.addEventListener('click', () => {
+        currentActive++
+        cardIndex++;
+        if(currentActive > circles.length) {
+            currentActive = circles.length
+        }
+
+        update()
+        cardDisplay(cardIndex, "next");
+    })
+
+    prev.addEventListener('click', () => {
+        currentActive--
+        cardIndex--;
+        if(currentActive < 1) {
+            currentActive = 1
+        }
+
+        update()
+        cardDisplay(cardIndex, "prev");
+    })
+
+    function cardDisplay(cardIndex, direction) {
+        if (direction === 'next') {
+            let lastIndex = cardIndex - 1;
+            cards[lastIndex].style.display = 'none';
+            cards[cardIndex].style.display = 'block';
+        } 
+        else if (direction === 'prev') {
+            let nextIndex = cardIndex + 1;
+            cards[nextIndex].style.display = 'none';
+            cards[cardIndex].style.display = 'block';
+        }
+
+    }
+
+    function update() {
+        for (let i = 0; i < circles.length; i++) {
+            if (i < currentActive) {
+                circles[i].classList.add('active');             
+            } else {
+                circles[i].classList.remove('active');
+            }
+        }
+    
+        const actives = document.querySelectorAll('.active');
+        progress.style.width = ((actives.length - 1) / (circles.length - 1)) * 100 + '%';
+    
+        if (currentActive === 1) {
+            prev.disabled = true;
+        } else if (currentActive === circles.length) {
+            next.disabled = true;
+        } else {
+            prev.disabled = false;
+            next.disabled = false;
+        }
+    }
+     
+}
+
 
 
 

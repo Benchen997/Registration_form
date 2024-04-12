@@ -9,57 +9,77 @@
         <h1>Registration Form</h1>
         <section class="main">
             <form id="myForm" action="submission.html" autocomplete="off">
-                <label for="name">Name:</label>
-                <br>
-                <input type="text" name="name" id="name" autocomplete="off" required>
-                <br>
-                <label for="email">Email:</label>
-                <br>
-                <input type="email" name="email" id="email" autocomplete="off" required>
-                <br>
-                <label for="password">Password:</label>
-                <br>
-                <input type="password" name="password" id="password" autocomplete="on" required>
-                <br>
-                <label for="confirm_password">Confirm Password:</label>
-                <br>
-                <input type="password" name="confirm_password" id="confirm_password" autocomplete="on" required>
-                <br>
-                <label for="birthday">Choose your birthday:</label>
-                <br>
-                <input type="date" id="birthday" name="birthday" required>
-                <br>
-                <!-- Gender -->
-                <label for="gender">Gender :</label>
-                <br>
-                <input class="gender" type="radio" value="male" name="gender" required> <label>male</label>
-                <input class="gender" type="radio" value="female" name="gender" > <label>female</label>
-                <br>           
-                <label for="profession">Choose Your Profession:</label>
-                <br>
-                <!-- Professions -->
-                <select name="profession" id="profession">
-                <option value="Web Developer">Web Developer</option>
-                <option value="Data Analytics">Data Analytics</option>
-                <option value="UI/UX Design">UI/UX Design</option>
-                <option value="Backend Developer">Backend Developer</option>
-                </select>
-                <br>
-                <!-- About me  -->
-                <div>
+                <!-- 1. Name and email -->
+                <div class="card">
+                    <label for="name">Name:</label>
                     <br>
+                    <input type="text" name="name" id="name" autocomplete="off" required>
+                    <label for="email">Email:</label>
+                    <br>
+                    <input type="email" name="email" id="email" autocomplete="off" required>
+                </div>
+
+               
+                <!-- 2. Password and confirmation -->
+                <div class="card">
+                    <label for="password">Password:</label>
+                    <br>
+                    <input type="password" name="password" id="password" autocomplete="on" required>
+                    <br>
+                    <label for="confirm_password">Confirm Password:</label>
+                    <br>
+                    <input type="password" name="confirm_password" id="confirm_password" autocomplete="on" required>
+                </div>
+                
+                <!-- 3. Birthday and gender-->
+
+                <div class="card">
+                    <label for="birthday">Choose your birthday:</label>
+                    <br>
+                    <input type="date" id="birthday" name="birthday" required>
+                    <label for="gender">Gender :</label>
+                    <br>
+                    <input class="gender" type="radio" value="male" name="gender" required> <label>male</label>
+                    <input class="gender" type="radio" value="female" name="gender" > <label>female</label>
+                </div>
+
+    
+                
+                <!--4. profession and about me-->
+
+                <div class="card">
+                    <label for="profession">Choose Your Profession:</label>
+                    <br>
+                    <!-- Professions -->
+                    <select name="profession" id="profession">
+                    <option value="Web Developer">Web Developer</option>
+                    <option value="Data Analytics">Data Analytics</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+                    <option value="Backend Developer">Backend Developer</option>
+                    </select>
                     <label for="aboutme"><strong> About me:</strong></label>
                     <br>
                     <textarea name="aboutme" id="aboutme" cols="30" rows="10">tell us about you</textarea>
+                    <!-- Submit  -->
+                    <input type="submit" name="submitBtn" id="submitBtn" 
+                    value="Register Now" 
+                    title="Click to register now!" 
+                    class="submit-button">
                 </div>
-                <br>
-                <!-- Submit  -->
-                <input type="submit" name="submitBtn" id="submitBtn" 
-                value="Register Now" 
-                title="Click to register now!" 
-                class="submit-button">
-
+              
             </form>
+            <div class="container">
+                <div class="progress-container">
+                  <div class="progress" id="progress"></div>
+                  <div class="circle active">1</div>
+                  <div class="circle">2</div>
+                  <div class="circle">3</div>
+                  <div class="circle">4</div>
+                </div>
+          
+                <button class="btn" id="prev" disabled>Prev</button>
+                <button class="btn" id="next">Next</button>
+              </div>
         </section>     
     </body>
     <script src="./script.js"></script>
