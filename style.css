@@ -3,50 +3,98 @@
 }
 
 :root {
-    --line-border-fill: #3498db;
+    --line-border-fill: #3fa655;
     --line-border-empty: #383838; 
   }
 
-  body {
-    background-color: #f1f1f1;
-    font-family: 'Muli', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* height: 100vh; */
-    margin: 0;
-  }
-
-h1 {
-    text-align: center;
-    color: darkblue;
-    margin-top: 4rem;
-    background-color: blue;
-   
+body {
+  background-image: linear-gradient(to right, #1e8ed0a2, #2f58c1);
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Align children vertically */
+  min-height: 100vh; /* Ensure it's at least the height of the viewport */
+  margin: 0;
 }
 
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+  color: blanchedalmond;
+  margin: 2rem 0 4rem; /* Adjust top and bottom margin */
+  width: 100%; /* Ensure it spans the width of the screen */
+  padding: 1rem; /* Add some padding */
+}
+
+p {
+  color: #333;
+  font-size: 1.2rem;
+  text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+  color: blanchedalmond;
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
 .main {
-    position: relative;
-    margin-top: 10rem;
-    border: #383838;
-    background-color: #3498db;
-    z-index: 0;       
+  display: flex; /* Changed to flex */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  width: 100%; /* Match width to its parent */
 }
 
 .card {
-    display: none;
-    position: absolute;
-    z-index: 15;
-    transition: opacity 0.5s, transform 0.5s;
-    transform: translateX(-100%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow for better visibility */
-    padding: 20px; /* Optional: Add some padding */
-    background-color: rgb(79, 79, 144);
-    border-radius: 1.8rem;
-    margin-bottom: 1rem;
-    height: 25rem;
-    width: 20rem;
+  display: none; /* Changed from none */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 1.8rem;
+  margin-bottom: 1rem;
+  box-shadow: 0.1rem 0.1rem 1.5rem rgba(0, 0, 0, 0.5);
+  height: 26rem;
+  width: 20rem;
+}
+.card label {
+  display: block;
+  margin-top: 1.5rem;
+}
+
+.card input[type="text"],
+.card input[type="email"],
+.card input[type="password"], 
+.card input[type="date"],
+.card input[type="submit"],
+.card textarea, 
+.card select { 
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+}
+.radio-group {
+  display: inline-block; 
+}
+.radio-group label {
+  display: inline-block;
+  margin-right: 1rem;
+}
+.radio-group input[type="radio"] {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.card textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+}
+.card input[type="submit"]:active {
+  background-color: #3fa655;
+  color: white;   
+}
+.card input[type="submit"]:hover {
+  background-color: #3fa655;
+  color: white;   
 }
 
 .card.hidden {
@@ -61,8 +109,8 @@ h1 {
 
 /*  for progress bar */
 .container {
-  z-index: 15;
-  text-align: center;
+z-index: 15;
+text-align: center;
 }
 
 .progress-container {
@@ -100,7 +148,7 @@ h1 {
 
 .circle {
   background-color: #f1f1f1;
-  color:#e2e2e2;
+  color:#343131;
   border-radius: 50%;
   height: 30px;
   width: 30px;
@@ -138,4 +186,16 @@ h1 {
 .btn:disabled {
   background-color: var(--line-border-empty);
   cursor: not-allowed;
+}
+
+@media (max-width: 768px) { 
+  .main {
+    width: 90%; /* Occupies 90% of the screen */
+    margin-top: 5rem; /* Adjust this value as needed to ensure it doesn't touch the very top of the viewport */
+    height: auto; /* Let it grow as tall as it needs to be to fit its content */
+    border-radius: 20px; /* Optional: if you want rounded corners */
+  }
+  .card {
+    width: 100%; 
+  }
 }

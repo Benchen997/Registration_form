@@ -2,20 +2,18 @@
 <html>
     <charset="UTF-8">
     <head>
-        <title>Registration From</title>
+        <title>Registrate Now!</title>
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <h1>Registration Form</h1>
+        <h1>Registrate Now !</h1>
         <section class="main">
             <form id="myForm" action="submission.html" autocomplete="off">
                 <!-- 1. Name and email -->
                 <div class="card">
                     <label for="name">Name:</label>
-                    <br>
                     <input type="text" name="name" id="name" autocomplete="off" required>
                     <label for="email">Email:</label>
-                    <br>
                     <input type="email" name="email" id="email" autocomplete="off" required>
                 </div>
 
@@ -23,11 +21,8 @@
                 <!-- 2. Password and confirmation -->
                 <div class="card">
                     <label for="password">Password:</label>
-                    <br>
                     <input type="password" name="password" id="password" autocomplete="on" required>
-                    <br>
                     <label for="confirm_password">Confirm Password:</label>
-                    <br>
                     <input type="password" name="confirm_password" id="confirm_password" autocomplete="on" required>
                 </div>
                 
@@ -35,12 +30,12 @@
 
                 <div class="card">
                     <label for="birthday">Choose your birthday:</label>
-                    <br>
                     <input type="date" id="birthday" name="birthday" required>
-                    <label for="gender">Gender :</label>
-                    <br>
-                    <input class="gender" type="radio" value="male" name="gender" required> <label>male</label>
-                    <input class="gender" type="radio" value="female" name="gender" > <label>female</label>
+                    <div class="radio-group">
+                        <label for="gender">Gender :</label>
+                        <input class="gender" type="radio" value="male" name="gender" required> <label>male</label>
+                        <input class="gender" type="radio" value="female" name="gender" > <label>female</label>
+                    </div> 
                 </div>
 
     
@@ -49,7 +44,6 @@
 
                 <div class="card">
                     <label for="profession">Choose Your Profession:</label>
-                    <br>
                     <!-- Professions -->
                     <select name="profession" id="profession">
                     <option value="Web Developer">Web Developer</option>
@@ -58,7 +52,6 @@
                     <option value="Backend Developer">Backend Developer</option>
                     </select>
                     <label for="aboutme"><strong> About me:</strong></label>
-                    <br>
                     <textarea name="aboutme" id="aboutme" cols="30" rows="10">tell us about you</textarea>
                     <!-- Submit  -->
                     <input type="submit" name="submitBtn" id="submitBtn" 
